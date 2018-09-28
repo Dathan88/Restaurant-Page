@@ -4,8 +4,5 @@ import { menuTab } from './menuTabModule.mjs';
 import { contactTab } from './contactTabModule.mjs';
 import './style.css';
 //const content = document.querySelector('#content');
-homeTab();
-menuTab();
-contactTab();
-
+contactTab, menuTab, homeTab;
 document.addEventListener('DOMContentLoaded', pageLayout);
