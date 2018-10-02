@@ -1,6 +1,6 @@
-import Pic from './img/restaurant-pic.jpg';
+import Pic from './img/restaurantPic.jpg';
 //Module for setting up restaurant page
-const pageLayout = (() => {
+const pageLayoutModule = (() => {
 	const pageStyle = document.querySelector('html').style;
 	const bodyStyle = document.querySelector('body').style;
 	const content = document.querySelector('#content');
@@ -12,13 +12,12 @@ const pageLayout = (() => {
 
 	pageStyle.maxWidth = '100vw';
 	pageStyle.minWidth = '100vw';
-	pageStyle.position = 'relative';
 	pageStyle.fontSize = '16px';
 	pageStyle.backgroundColor = 'grey';
 
 	bodyStyle.maxWidth = '100%';
+	bodyStyle.height = '75em';
 	bodyStyle.margin = '0px';
-	bodyStyle.position = 'relative';
 	bodyStyle.overflowX = 'hidden';
 
 	content.style.width = '100%';
@@ -26,9 +25,11 @@ const pageLayout = (() => {
 	content.style.margin = 'auto';
 
 	tabContainer.setAttribute('id', 'tabContainer');
+	tabContainer.style.position = 'relative';
 	tabContainer.style.fontSize = '32px';
 	tabContainer.style.backgroundColor = 'lightgrey';
 	tabContainer.style.height = '2em';
+	tabContainer.style.maxHeight = '2em';
 
 	headline.setAttribute('id', 'headline');
 	headline.textContent = 'JS Restaurant';
@@ -46,11 +47,13 @@ const pageLayout = (() => {
 	myPic.setAttribute('id', 'myPic');
 	myPic.style.margin = 'auto';
 	myPic.style.position = 'relative';
-	myPic.style.height = '34em';
+	myPic.style.height = '29em';
 	myPic.style.width = '100%';
+	myPic.style.zIndex = '1';
 	myPic.style.borderTop = '1px solid black';
 
 	infoContainer.setAttribute('id', 'infoContainer');
+	infoContainer.style.position = 'relative';
 	infoContainer.style.backgroundColor = 'grey';
 	infoContainer.style.width = '100%';
 	infoContainer.style.height = '100%';
@@ -74,4 +77,4 @@ const pageLayout = (() => {
 		headline,
 	};
 })();
-export { pageLayout };
+export { pageLayoutModule };

@@ -1,54 +1,57 @@
-import { pageLayout } from './pageLayoutModule.mjs';
-import { contactTab } from './contactTabModule.mjs';
-import { menuTab } from './menuTabModule.mjs';
-import { homeTab } from './homeTabModule.mjs';
-homeTab, menuTab, contactTab;
-const myTabs = document.getElementsByClassName('tabs');
+import { pageLayoutModule } from './pageLayoutModule.mjs';
+import { contactTabModule } from './contactTabModule.mjs';
+import { menuTabModule } from './menuTabModule.mjs';
+import { homeTabModule } from './homeTabModule.mjs';
 
-for (let i = 0; i < myTabs.length; i++) {
-	console.log(myTabs[i]);
-	//alert(this);
-	myTabs[i].onclick = checkTabs;
-}
+const myTabs = document.querySelectorAll('.tabs');
 
-document.addEventListener('DOMContentLoaded', pageLayout);
+console.log(contactTabModule.mapFunction());
 
-function checkTabs(event) {
-	console.log('hello', this.childNode, this.node);
-	myTabs.style.backgroundColor = 'white';
-	myTabs.style.color = 'black';
+myTabs.forEach(element => {
+	element.addEventListener('click', e => {
+		switch (element.id) {
+			case 'homeTab':
+				console.log('home');
+				homeTab.style.backgroundColor = 'black';
+				homeTab.style.color = 'white';
 
-	this.style.backgroundColor = 'black';
-	this.style.color = 'white';
+				infoContainer.removeChild(infoContainer.firstChild);
+				infoContainer.appendChild(homeTabModule.homeInfo);
 
-	infoContainer.removeChild(infoContainer.firstChild);
-	infoContainer.appendChild();
+				contactTab.style.backgroundColor = 'white';
+				contactTab.style.color = 'black';
 
-	/*
-    contactTab.style.backgroundColor = 'white';
-    contactTab.style.color = 'black';
+				menuTab.style.backgroundColor = 'white';
+				menuTab.style.color = 'black';
+				break;
+			case 'menuTab':
+				console.log('menu');
+				homeTab.style.backgroundColor = 'white';
+				homeTab.style.color = 'black';
 
-    menuTab.style.backgroundColor = 'white';
-    menuTab.style.color = 'black'; */
-}
-/* console.log(myTabs.id);
+				infoContainer.removeChild(infoContainer.firstChild);
+				infoContainer.appendChild(menuTabModule.menuInfo);
 
-myTabs.childNodes.forEach(function(currentValue, currentIndex, listObj) {
-	console.log(currentValue + ', ' + currentIndex + ', ' + this);
-}); */
+				menuTab.style.backgroundColor = 'black';
+				menuTab.style.color = 'white';
 
-/* 
-homeTab.addEventListener('click', function() {
-	homeTab.style.backgroundColor = 'black';
-	homeTab.style.color = 'white';
+				contactTab.style.backgroundColor = 'white';
+				contactTab.style.color = 'black';
+				break;
+			case 'contactTab':
+				console.log('contact');
+				homeTab.style.backgroundColor = 'white';
+				homeTab.style.color = 'black';
 
-	infoContainer.removeChild(infoContainer.firstChild);
-	infoContainer.appendChild(homeInfo);
+				infoContainer.removeChild(infoContainer.firstChild);
+				infoContainer.appendChild(contactTabModule.contactInfo);
 
-	contactTab.style.backgroundColor = 'white';
-	contactTab.style.color = 'black';
+				menuTab.style.backgroundColor = 'white';
+				menuTab.style.color = 'black';
 
-	menuTab.style.backgroundColor = 'white';
-	menuTab.style.color = 'black';
+				contactTab.style.backgroundColor = 'black';
+				contactTab.style.color = 'white';
+				break;
+		}
+	});
 });
- */

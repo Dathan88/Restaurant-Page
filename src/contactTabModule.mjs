@@ -1,6 +1,7 @@
-const contactTab = (() => {
+const contactTabModule = (() => {
 	const contactTab = document.createElement('button');
 	const contactInfo = document.createElement('p');
+	const mapContainer = document.createElement('div');
 
 	contactTab.setAttribute('id', 'contactTab');
 	contactTab.className = 'tabs';
@@ -21,20 +22,6 @@ const contactTab = (() => {
 	contactTab.style.outline = 'none';
 	contactTab.style.borderColor = 'black';
 
-	contactTab.addEventListener('click', function() {
-		homeTab.style.backgroundColor = 'white';
-		homeTab.style.color = 'black';
-
-		menuTab.style.backgroundColor = 'white';
-		menuTab.style.color = 'black';
-
-		contactTab.style.backgroundColor = 'black';
-		contactTab.style.color = 'white';
-
-		infoContainer.removeChild(infoContainer.firstChild);
-		infoContainer.appendChild(contactInfo);
-	});
-
 	contactInfo.setAttribute('id', 'contactInfo');
 	contactInfo.style.margin = 'auto';
 	contactInfo.style.position = 'relative';
@@ -42,15 +29,43 @@ const contactTab = (() => {
 	contactInfo.style.width = '60%';
 	contactInfo.style.height = 'auto';
 	contactInfo.style.fontSize = '2em';
-	contactInfo.style.textIndent = '50px';
-	contactInfo.style.whiteSpace = 'pre-line';
+	contactInfo.style.whiteSpace = 'pre';
 
-	contactInfo.textContent = '1-800-EAT-RSLF';
+	contactInfo.textContent = 'Call:' + '\r\n';
+	contactInfo.textContent += '1-800-EAT-RSLF' + '\r\n';
+	contactInfo.textContent += '-\r\n';
+	contactInfo.textContent += 'Email:' + '\r\n';
+	contactInfo.textContent += 'Laboriosam@fuga.inventore' + '\r\n';
+	contactInfo.textContent += '-\r\n';
+	contactInfo.textContent += 'Address:' + '\r\n';
+	contactInfo.textContent += 'House 6, Street 9 ' + '\r\n';
+	contactInfo.textContent += 'New Taimani, KL 1005' + '\r\n';
+	contactInfo.textContent += 'Afghanistan';
+
+	mapContainer.setAttribute('id', 'mapContainer');
+	mapContainer.style.height = '100%';
+	mapContainer.style.width = '100%';
+
+	function mapFunction() {
+		const mapConfig = {
+			center: new google.maps.LatLng(34.551444, 69.148611),
+			zoom: 8,
+		};
+		const myMap = new google.maps.Map(
+			document.getElementById('mapContainer'),
+			mapConfig
+		);
+		return mapConfig, myMap;
+	}
 
 	tabContainer.appendChild(contactTab);
+	contactInfo.appendChild(mapContainer);
+	//mapContainer.appendChild(myMap);
 
 	console.log('Contact Tab');
-	return { contactTab, contactInfo };
+	return { contactTab, contactInfo, mapContainer, mapFunction };
 })();
 
-export { contactTab };
+export { contactTabModule };
+
+//AIzaSyBUjw3b_xcqOnsmzUfZ7ayWzqrNjnMKcAo;

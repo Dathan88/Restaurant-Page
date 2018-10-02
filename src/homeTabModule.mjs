@@ -1,4 +1,4 @@
-const homeTab = (() => {
+const homeTabModule = (() => {
 	const homeTab = document.createElement('button');
 	const contactTab = document.querySelector('#contactTab');
 	const menuTab = document.querySelector('#menuTab');
@@ -24,20 +24,6 @@ const homeTab = (() => {
 	homeTab.style.outline = 'none';
 	homeTab.style.borderColor = 'black';
 
-	homeTab.addEventListener('click', function() {
-		homeTab.style.backgroundColor = 'black';
-		homeTab.style.color = 'white';
-
-		infoContainer.removeChild(infoContainer.firstChild);
-		infoContainer.appendChild(homeInfo);
-
-		contactTab.style.backgroundColor = 'white';
-		contactTab.style.color = 'black';
-
-		menuTab.style.backgroundColor = 'white';
-		menuTab.style.color = 'black';
-	});
-
 	homeInfo.setAttribute('id', 'homeInfo');
 	homeInfo.style.margin = 'auto';
 	homeInfo.style.position = 'relative';
@@ -48,8 +34,10 @@ const homeTab = (() => {
 	homeInfo.style.textIndent = '50px';
 	homeInfo.style.whiteSpace = 'pre-wrap';
 
-	homeInfo.textContent = `Est perspiciatis dolores atque alias assumenda voluptates possimus. Sequi rerum hic molestiae officia sunt voluptatibus. Qui tempora dolorem sunt nihil quam totam totam. Quaerat harum enim eius qui. Dicta quasi magnam debitis quaerat est perspiciatis et et. 
-	Eos fugit molestias corporis distinctio. Perferendis facere quaerat expedita. Voluptates beatae quidem repellat harum dolore eveniet officiis debitis. Vel magni enim aliquid provident sit. Molestiae ut et autem incidunt sapiente odio facilis molestiae.`;
+	homeInfo.textContent = `Est totam fugit. Accusantium consequatur nulla sit dignissimos quia deserunt beatae fugit ut. Quasi quasi nobis fugit sunt in laudantium odio rerum. Aliquam labore reprehenderit et ratione perferendis laborum. Et at consectetur labore. 
+	Inventore dignissimos temporibus nisi. Nihil dolorem modi doloribus beatae quos quidem dolorem quia. Perferendis aliquid non illo rerum. In est id temporibus eos. 
+	Quia eum impedit fuga. Tenetur voluptatem iusto non soluta esse labore nisi. Nisi quam maxime dignissimos laboriosam. Id omnis quas omnis assumenda. Ab nostrum illo fugit distinctio. Consequatur iusto laboriosam corporis magni hic recusandae et velit.
+	Autem aut ab laboriosam est consectetur esse et. Quo rem qui occaecati harum. Aperiam quasi facere quas nam. Voluptates laudantium sed repellat quidem amet dolores odit eum beatae.`;
 
 	tabContainer.appendChild(homeTab);
 	infoContainer.appendChild(homeInfo);
@@ -58,4 +46,4 @@ const homeTab = (() => {
 	return { homeTab, contactTab, menuTab, homeInfo };
 })();
 
-export { homeTab };
+export { homeTabModule };

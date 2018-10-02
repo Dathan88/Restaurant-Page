@@ -1,4 +1,4 @@
-const menuTab = (() => {
+const menuTabModule = (() => {
 	const menuTab = document.createElement('button');
 	const menuInfo = document.createElement('p');
 
@@ -21,36 +21,36 @@ const menuTab = (() => {
 	menuTab.style.outline = 'none';
 	menuTab.style.borderColor = 'black';
 
-	menuTab.addEventListener('click', function() {
-		homeTab.style.backgroundColor = 'white';
-		homeTab.style.color = 'black';
-
-		menuTab.style.backgroundColor = 'black';
-		menuTab.style.color = 'white';
-
-		infoContainer.removeChild(infoContainer.firstChild);
-		infoContainer.appendChild(menuInfo);
-
-		contactTab.style.backgroundColor = 'white';
-		contactTab.style.color = 'black';
-	});
-
 	menuInfo.setAttribute('id', 'menuInfo');
 	menuInfo.style.margin = 'auto';
+	menuInfo.style.padding = '0px';
 	menuInfo.style.position = 'relative';
 	menuInfo.style.textAlign = 'center';
 	menuInfo.style.width = '60%';
 	menuInfo.style.height = 'auto';
 	menuInfo.style.fontSize = '2em';
-	menuInfo.style.textIndent = '50px';
-	menuInfo.style.whiteSpace = 'pre-line';
+	menuInfo.style.whiteSpace = 'pre';
 
-	menuInfo.textContent = 'Burgers, Pizza, Spaghetti';
+	menuInfo.textContent = 'Ostrich Burgers $5.99 \r\n';
+	menuInfo.textContent += '- \r\n';
+	menuInfo.textContent += 'Road-Kill Pizza $7.99 \r\n';
+	menuInfo.textContent += '- \r\n';
+	menuInfo.textContent += 'Octopus Arms Spaghetti $6.99 \r\n';
+	menuInfo.textContent += '- \r\n';
+	menuInfo.textContent += 'Lobster Lips $12.99 \r\n';
+	menuInfo.textContent += '- \r\n';
+	menuInfo.textContent += 'Fish Fries $4.99 \r\n';
+	menuInfo.textContent += '- \r\n';
+	menuInfo.textContent += 'Buzzard Beaks $9.99 \r\n';
+	menuInfo.textContent += '- \r\n';
+	menuInfo.textContent += 'Crow Eggs $5.99 \r\n';
+	menuInfo.textContent += '- \r\n';
+	menuInfo.textContent += 'Salamander Sausages $8.99 \r\n';
 
 	tabContainer.appendChild(menuTab);
 
-	console.log('Menu Tab' + ' ' + menuInfo.textContent);
+	console.log('Menu Tab');
 	return { menuTab, menuInfo };
 })();
 
-export { menuTab };
+export { menuTabModule };
