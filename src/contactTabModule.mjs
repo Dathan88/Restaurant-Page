@@ -1,7 +1,6 @@
 const contactTabModule = (() => {
 	const contactTab = document.createElement('button');
 	const contactInfo = document.createElement('p');
-	const mapContainer = document.createElement('div');
 
 	contactTab.setAttribute('id', 'contactTab');
 	contactTab.className = 'tabs';
@@ -42,30 +41,9 @@ const contactTabModule = (() => {
 	contactInfo.textContent += 'New Taimani, KL 1005' + '\r\n';
 	contactInfo.textContent += 'Afghanistan';
 
-	mapContainer.setAttribute('id', 'mapContainer');
-	mapContainer.style.height = '100%';
-	mapContainer.style.width = '100%';
-
-	function mapFunction() {
-		const mapConfig = {
-			center: new google.maps.LatLng(34.551444, 69.148611),
-			zoom: 8,
-		};
-		const myMap = new google.maps.Map(
-			document.getElementById('mapContainer'),
-			mapConfig
-		);
-		return mapConfig, myMap;
-	}
-
 	tabContainer.appendChild(contactTab);
-	contactInfo.appendChild(mapContainer);
-	//mapContainer.appendChild(myMap);
 
-	console.log('Contact Tab');
-	return { contactTab, contactInfo, mapContainer, mapFunction };
+	return { contactTab, contactInfo };
 })();
 
 export { contactTabModule };
-
-//AIzaSyBUjw3b_xcqOnsmzUfZ7ayWzqrNjnMKcAo;

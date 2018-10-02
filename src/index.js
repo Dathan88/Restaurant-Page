@@ -2,10 +2,7 @@ import { pageLayoutModule } from './pageLayoutModule.mjs';
 import { contactTabModule } from './contactTabModule.mjs';
 import { menuTabModule } from './menuTabModule.mjs';
 import { homeTabModule } from './homeTabModule.mjs';
-
 const myTabs = document.querySelectorAll('.tabs');
-
-console.log(contactTabModule.mapFunction());
 
 myTabs.forEach(element => {
 	element.addEventListener('click', e => {
